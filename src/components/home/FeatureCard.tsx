@@ -35,7 +35,7 @@ const FeatureCard = ({ className, image, featureType, idNumber, category, author
             alt='featured.img'
             height={1000}
             width={1000}
-            className='h-full w-full border border-black group-hover:grayscale-100'
+            className='h-full w-full border border-black group-hover:grayscale-100 group-active:grayscale-100 group-focus-within:grayscale-100'
             />
 
             <div className='w-full flex flex-row justify-between items-center'>
@@ -43,7 +43,7 @@ const FeatureCard = ({ className, image, featureType, idNumber, category, author
                 <p className='text-[10px] md:text-xs font-medium text-neutral-700'> by {"Danish Khan"} | {7} min read </p>
             </div>
 
-            <span className='w-full font-medium font-merriweather leading-snug text-xl md:text-2xl lg:text-[28px] group-hover:bg-violet-400'>
+            <span className='w-full font-medium font-merriweather leading-snug text-xl md:text-2xl lg:text-[28px] group-hover:bg-violet-400 group-active:bg-violet-400 group-focus-within:bg-violet-400'>
                 Best productivity hacks for creative freelancers today
             </span>
         </div>
