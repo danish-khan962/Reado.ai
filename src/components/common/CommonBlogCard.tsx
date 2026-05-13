@@ -45,7 +45,7 @@ const CommonBlogCard = ({ className, image, imageClassName, featureType, idNumbe
 
             <div className='w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-2'>
                 <p className={cn('text-[10px] md:text-xs font-medium uppercase text-neutral-700', categoryClassName)}> TECH </p>
-                <p className={cn('text-[10px] md:text-xs font-medium text-neutral-700', authorClassName)}> by {"Danish Khan"} | {7} min read </p>
+                <p className={cn('text-[10px] md:text-xs font-medium text-neutral-700', authorClassName)}> by <span className='hover:font-semibold hover:underline transition-all ease-in duration-200'> {"Danish Khan"} </span> | {7} min read </p>
             </div>
 
             <span className={cn('w-full font-medium font-merriweather leading-snug text-base sm:text-lg md:text-xl lg:text-2xl group-hover:bg-orange-300 group-active:bg-orange-300 group-focus-within:bg-orange-300', titleClassName)}>

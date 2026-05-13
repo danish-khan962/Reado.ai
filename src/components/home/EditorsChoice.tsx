@@ -37,7 +37,7 @@ const EditorsChoice = () => {
                                 <span className='self-start text-xl sm:text-2xl md:text-3xl lg:text-4xl bg-white font-medium font-merriweather group-hover:bg-fuchsia-300 group-active:bg-fuchsia-300 group-focus-within:bg-fuchsia-300' style={{ wordSpacing: "8px" }}>How remote work is</span>
                                 <span className='self-start text-xl sm:text-2xl md:text-3xl lg:text-4xl bg-white font-medium font-merriweather group-hover:bg-fuchsia-300 group-active:bg-fuchsia-300 group-focus-within:bg-fuchsia-300' style={{ wordSpacing: "8px" }}>reshaping modern lifestyles</span>
                             </div>
-                            <p className='text-white font-medium text-[10px] md:text-xs'>by {"Danish Khan"} | {8} min read</p>
+                            <p className='text-white font-medium text-[10px] md:text-xs'>by <span className='hover:font-semibold hover:underline transition-all ease-in duration-200'> {"Danish Khan"} </span> | {8} min read</p>
                         </div>
                     </div>
 

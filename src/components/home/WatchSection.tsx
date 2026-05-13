@@ -42,7 +42,7 @@ const WatchSection = () => {
 
                                 <div className='w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-2'>
                                     <p className='text-[10px] md:text-xs font-medium uppercase text-neutral-400'> HEALTH </p>
-                                    <p className='text-[10px] md:text-xs font-medium text-neutral-400'> by {"Danish Khan"} | {7} min read </p>
+                                    <p className='text-[10px] md:text-xs font-medium text-neutral-400'> by <span className='hover:font-semibold hover:underline transition-all ease-in duration-200'> {"Danish Khan"} </span> | {7} min read </p>
                                 </div>
                             </div>
                         </div>

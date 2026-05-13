@@ -40,7 +40,7 @@ const FeatureCard = ({ className, image, featureType, idNumber, category, author
 
             <div className='w-full flex flex-row justify-between items-center'>
                 <p className='text-[10px] md:text-xs font-medium uppercase text-neutral-700'> TECH </p>
-                <p className='text-[10px] md:text-xs font-medium text-neutral-700'> by {"Danish Khan"} | {7} min read </p>
+                <p className='text-[10px] md:text-xs font-medium text-neutral-700'> by <span className='hover:font-semibold hover:underline transition-all ease-in duration-200'>{"Danish Khan"} </span> | {7} min read </p>
             </div>
 
             <span className='w-full font-medium font-merriweather leading-snug text-xl md:text-2xl lg:text-[28px] group-hover:bg-violet-400 group-active:bg-violet-400 group-focus-within:bg-violet-400'>
