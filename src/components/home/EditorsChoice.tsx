@@ -29,7 +29,7 @@ const EditorsChoice = () => {
                             alt='editor&apos;s choice'
                             height={1000}
                             width={1000}
-                            className='w-full max-h-130 h-full object-cover object-center grayscale-25 group-hover:grayscale-100 group-active:grayscale-100 group-focus-within:grayscale-100'
+                            className='w-full max-h-130 h-full object-cover object-center grayscale-25 group-hover:grayscale-100 group-active:grayscale-100 group-focus-within:grayscale-100 border border-black'
                         />
                         <div className='absolute top-6 left-6 sm:top-8 sm:left-8 md:top-10 md:left-10 lg:top-12 lg:right-12 flex flex-col gap-2 sm:gap-2.5 md:gap-3.5 lg:gap-5'>
                             <span className='text-white font-medium text-[10px] md:text-xs'> Lifestyle </span>
