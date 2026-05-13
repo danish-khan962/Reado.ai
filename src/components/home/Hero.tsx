@@ -45,7 +45,7 @@ const Hero = () => {
 
                 <div className="w-full py-2.5 sm:py-3 md:py-3.5 bg-black overflow-hidden flex items-center text-white">
                     <Marquee
-                        speed={15}
+                        speed={12}
                         gradient={true}
                         gradientColor="black"
                         gradientWidth={80}
