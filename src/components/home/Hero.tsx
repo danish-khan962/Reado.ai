@@ -41,8 +41,6 @@ const Hero = () => {
                     className='w-full h-full'
                 />
 
-                {/* ⚡ CSS and Marquee Alignment needs to be fixed.... */}
-
                 <div className="w-full py-2.5 sm:py-3 md:py-3.5 bg-black overflow-hidden flex items-center text-white">
                     <Marquee
                         speed={12}

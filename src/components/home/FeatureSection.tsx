@@ -15,7 +15,11 @@ const FeatureSection = () => {
                         </p>
                     </div>
 
-                    <SubscribeForm />
+                    <SubscribeForm
+                    heading='Don&apos;t miss a thing'
+                    subheading='Subscribe to get updates straight to your inbox.'
+                    placeholder='Subscribe your email'
+                    />
                 </div>
 
                 <FeatureCard />

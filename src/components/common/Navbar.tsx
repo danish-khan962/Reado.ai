@@ -4,6 +4,7 @@ import MaxWidthContainer from '@/styles/MaxWidthContainer'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { Input } from '../ui/input'
 import { Button } from '../ui/button'
 import { HugeiconsIcon } from '@hugeicons/react'
@@ -17,6 +18,11 @@ const NavigationLinks = [
 ]
 
 const Navbar = () => {
+
+    const pathname = usePathname();
+    React.useEffect(() => {
+        setIsNavOpen(false);
+    }, [pathname]);
 
     // Navigation State for mobile
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -46,7 +52,7 @@ const Navbar = () => {
                                 </Link>
                             ))}
                         </div>
-                        
+
                         <Button className='flex flex-row justify-start items-center gap-1 bg-gray-400/20 px-2 py-1 rounded-md hover:bg-gray-400/20'>
                             <HugeiconsIcon icon={Search01Icon} size={12} className='text-neutral-600' />
                             <input type="text" placeholder='Search All' className='border-none outline-none placeholder:text-xs hidden lg:block placeholder:text-neutral-600 text-neutral-800' />
