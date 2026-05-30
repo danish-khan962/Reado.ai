@@ -5,8 +5,9 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
+import { ClerkProvider } from "@clerk/nextjs";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,12 +45,14 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, playfairDisplay.variable, merriweather.variable, "font-sans", inter.variable)}
     >
-      <body className="min-h-full flex flex-col justify-between cursor-none">
-        <SmoothCursor />
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <ClerkProvider>
+        <body className="min-h-full flex flex-col justify-between cursor-none">
+          <SmoothCursor />
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
+      </ClerkProvider>
     </html>
   );
 }

@@ -10,6 +10,7 @@ import { Button } from '../ui/button'
 import { HugeiconsIcon } from '@hugeicons/react'
 import { MailAdd01Icon, Menu09Icon, MultiplicationSignIcon, Search01Icon } from '@hugeicons/core-free-icons'
 import SeparatorBlack from '../ui/separator-black'
+import { UserButton, useClerk, useUser } from '@clerk/nextjs'
 
 const NavigationLinks = [
     { name: "Home", urlHref: "/" },
@@ -18,6 +19,10 @@ const NavigationLinks = [
 ]
 
 const Navbar = () => {
+
+    //Clerk Authentication
+    const { user } = useUser();
+    const { openSignIn } = useClerk();
 
     const pathname = usePathname();
     React.useEffect(() => {
@@ -64,6 +69,10 @@ const Navbar = () => {
                         <Button className='cursor-pointer block lg:hidden' onClick={toggleNav}>
                             {isNavOpen ? (<HugeiconsIcon icon={MultiplicationSignIcon} />) : (<HugeiconsIcon icon={Menu09Icon} />)}
                         </Button>
+
+                        {!user ? (<Button onClick={() => openSignIn()} className='cursor-pointer'>Sign in</Button>)
+                            :
+                            (<UserButton />)}
                     </div>
                 </div>
 

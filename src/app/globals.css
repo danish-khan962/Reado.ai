@@ -133,13 +133,16 @@
     scroll-behavior: smooth;
   }
 
-  * {
-    cursor: none !important;
+  body {
+    cursor: none;
   }
 
   input,
   textarea,
-  select {
-    cursor: text !important;
+  select,
+  button,
+  .cl-rootBox *,
+  .cl-card * {
+    cursor: auto !important;
   }
 }
