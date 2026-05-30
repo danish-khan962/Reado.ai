@@ -4,7 +4,7 @@ import CommonBlogCard from '../common/CommonBlogCard'
 import { Separator } from '../ui/separator'
 
 // Fake data for Sidebar Blog links
-const sideBarBlogLinsk = [
+const sideBarBlogLinks = [
     {title: "How podcasts change the way we learn", author: "Jacob Anderson", minRead: 7},
     {title: "How to create a realistic monthly budget", author: "William Parker", minRead: 4},
     {title: "Top exercises to strenghten your core and back", author: "Simon Douge", minRead: 12},
@@ -26,7 +26,7 @@ const DiscoverMoreStories = () => {
                     <CommonBlogCard titleClassName='group-hover:bg-teal-200' />
 
                     <div className='max-w-none lg:max-w-xs w-full mt-6 lg:mt-0 flex flex-col gap-y-3.5 sm:gap-y-4 md:gap-y-5 lg:gap-y-7'>
-                        {sideBarBlogLinsk.map((item, index) => (
+                        {sideBarBlogLinks.map((item, index) => (
                             <div className='flex flex-col justify-start items-start gap-y-2.5 group' key={index}>
                                 <h2 className='text-base md:text-lg font-merriweather group-hover:bg-cyan-300 group-active:bg-cyan-300 group-focus-within:bg-cyan-300'>{item.title}</h2>
                                 <p className='text-[10px] md:text-xs'>by <span className='hover:font-semibold hover:underline transition-all ease-in duration-200'>{item.author}</span> | {item.minRead} min read</p>

@@ -73,7 +73,7 @@ const Navbar = () => {
                         <div className='absolute top-3 left-0 right-0 z-50 w-full min-h-[60vh] h-full bg-white/80 backdrop-blur-xl border border-black/10 rounded-lg flex flex-col gap-y-5 py-6 shadow-[1px_1px_16px_1px]'>
                             {NavigationLinks.map((link, index) => (
                                 <Link href={link.urlHref} key={index}>
-                                    <span className='text-xl font-semibold ml-4 lg:ml-6 uppercase'>{link.name}</span>
+                                    <span className='text-xl font-semibold ml-4 lg:ml-6 uppercase font-merriweather'>{link.name}</span>
                                 </Link>
                             ))}
                         </div>
