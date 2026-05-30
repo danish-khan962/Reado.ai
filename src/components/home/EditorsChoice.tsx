@@ -4,6 +4,7 @@ import SeparatorBlack from '../ui/separator-black'
 import Image from 'next/image'
 import { HugeiconsIcon } from '@hugeicons/react'
 import { CircleSmallIcon } from '@hugeicons/core-free-icons'
+import Link from 'next/link'
 
 const EditorsChoice = () => {
     return (
@@ -12,7 +13,7 @@ const EditorsChoice = () => {
                 <h1 className='font-medium font-merriweather leading-tight text-4xl md:text-5xl lg:text-6xl max-w-2xl w-full' style={{ wordSpacing: '4px', letterSpacing: '0.5px' }}>Editor&apos;s Choice</h1>
                 <SeparatorBlack className='mt-5' />
 
-                <div className='border border-black p-2.5 flex flex-col gap-y-2 w-full mt-8 group'>
+                <Link href={"/blog/slug"} className='border border-black p-2.5 flex flex-col gap-y-2 w-full mt-8 group'>
                     <div className='w-full flex flex-row justify-between items-center gap-x-2'>
                         <div className='flex flex-row justify-center items-center'>
                             <HugeiconsIcon icon={CircleSmallIcon} size={14} />
@@ -41,7 +42,7 @@ const EditorsChoice = () => {
                         </div>
                     </div>
 
-                </div>
+                </Link>
             </MaxWidthContainer>
         </div>
     )

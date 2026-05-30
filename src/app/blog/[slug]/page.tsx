@@ -130,17 +130,19 @@ const page = () => {
                         <div className='flex flex-col gap-3.5'>
                             <p className='text-xl md:text-2xl font-merriweather'>Editor&apos;s choice</p>
                             <div className='flex flex-row gap-5'>
-                                <Image
-                                    src={"/images/zhang-ziyu-zxQgUCk4B5A-unsplash.jpg"}
-                                    alt="author"
-                                    height={1000}
-                                    width={1000}
-                                    loading='lazy'
-                                    className='h-full w-full max-w-32 sm:max-w-36 md:max-w-40 lg:max-w-44 aspect-video border border-black'
-                                />
+                                <Link href={"/blog/slug"} className='h-full w-full max-w-32 sm:max-w-36 md:max-w-40 lg:max-w-44'>
+                                    <Image
+                                        src={"/images/zhang-ziyu-zxQgUCk4B5A-unsplash.jpg"}
+                                        alt="author"
+                                        height={1000}
+                                        width={1000}
+                                        loading='lazy'
+                                        className='h-full w-full max-w-32 sm:max-w-36 md:max-w-40 lg:max-w-44 aspect-video border border-black'
+                                    />
+                                </Link>
                                 <div className='flex flex-col justify-between items-stretch gap-y-1.5'>
                                     <div className='flex flex-col'>
-                                        <p className='text-base md:text-lg lg:text-xl font-medium font-merriweather line-clamp-2'> <Link href={"#author"} className='hover:bg-emerald-300'>How remote work is reshaping modern lifestyles</Link></p>
+                                        <p className='text-base md:text-lg lg:text-xl font-medium font-merriweather line-clamp-2'> <Link href={"/blog/slug"} className='hover:bg-emerald-300'>How remote work is reshaping modern lifestyles</Link></p>
                                     </div>
                                     <p className='text-[10px] md:text-xs font-medium text-neutral-700'>by <Link href={"#author"} className='hover:underline font-medium text-black'>Danish Khan</Link> | 5 min read</p>
                                 </div>
@@ -149,11 +151,14 @@ const page = () => {
                         <Separator className='bg-neutral-800 w-screen' />
 
 
+                        {/* Recent Posts */}
                         <div className='flex flex-col gap-3.5'>
                             <p className='text-xl md:text-2xl font-merriweather'>Recent Posts</p>
                             {sideBarBlogLinks.map((item, index) => (
                                 <div className='flex flex-col justify-start items-start gap-y-2.5 group' key={index}>
-                                    <h2 className='text-base md:text-lg font-merriweather group-hover:bg-cyan-300 group-active:bg-cyan-300 group-focus-within:bg-cyan-300'>{item.title}</h2>
+                                    <Link href={"/blog/slug"}>
+                                        <h2 className='text-base md:text-lg font-merriweather group-hover:bg-cyan-300 group-active:bg-cyan-300 group-focus-within:bg-cyan-300'>{item.title}</h2>
+                                    </Link>
                                     <p className='text-[10px] md:text-xs'>by <span className='hover:font-semibold hover:underline transition-all ease-in duration-200'>{item.author}</span> | {item.minRead} min read</p>
                                     <Separator className='bg-neutral-600 w-screen' />
                                 </div>

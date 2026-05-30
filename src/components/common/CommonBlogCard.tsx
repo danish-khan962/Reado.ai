@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils'
 import { HugeiconsIcon } from '@hugeicons/react'
 import { CircleSmallIcon } from '@hugeicons/core-free-icons'
 import Image from 'next/image'
+import Link from 'next/link'
 
 type commonBlogCardProps = {
     className?: string,
@@ -21,7 +22,7 @@ type commonBlogCardProps = {
 
 const CommonBlogCard = ({ className, image, imageClassName, featureType, idNumber, category, categoryClassName, author, authorClassName, minRead, title, titleClassName }: commonBlogCardProps) => {
     return (
-        <div className={cn(
+        <Link href={"/blog/slug"} className={cn(
             "max-w-5xl w-full bg-transparent border border-neutral-900 p-2.5 flex flex-col justify-center items-center gap-3 group",
             className
         )}>
@@ -51,7 +52,7 @@ const CommonBlogCard = ({ className, image, imageClassName, featureType, idNumbe
             <span className={cn('w-full font-medium font-merriweather leading-snug text-base sm:text-lg md:text-xl lg:text-2xl group-hover:bg-orange-300 group-active:bg-orange-300 group-focus-within:bg-orange-300', titleClassName)}>
                 Best productivity hacks for creative freelancers today
             </span>
-        </div>
+        </Link>
     )
 }
 

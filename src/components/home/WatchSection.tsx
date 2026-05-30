@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { HugeiconsIcon } from '@hugeicons/react'
 import { CircleSmallIcon } from '@hugeicons/core-free-icons'
 import CommonBlogCard from '../common/CommonBlogCard'
+import Link from 'next/link'
 
 const WatchSection = () => {
     return (
@@ -17,7 +18,7 @@ const WatchSection = () => {
                 </div>
                 <SeparatorWhite className='mt-5' />
 
-                <div className='flex flex-col gap-y-2 mt-8 group'>
+                <Link href={"/blog/slug"} className='flex flex-col gap-y-2 mt-8 group'>
                     <div className='w-full h-full border border-white p-2.5 flex flex-col gap-y-2'>
                         <div className='w-full flex flex-row justify-between items-center gap-x-2'>
                             <div className='flex flex-row justify-center items-center'>
@@ -47,7 +48,7 @@ const WatchSection = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </Link>
 
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-3 mt-0 md:mt-8'>
                     <CommonBlogCard className='border-white' categoryClassName='text-neutral-400' authorClassName='text-neutral-400' titleClassName='group-hover:text-black group-hover:bg-yellow-600 group-active:bg-yellow-600 group-focus-within:bg-yellow-600' imageClassName='border-white'/>

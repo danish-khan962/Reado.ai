@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils'
 import { HugeiconsIcon } from '@hugeicons/react'
 import { CircleSmallIcon } from '@hugeicons/core-free-icons'
 import Image from 'next/image'
+import Link from 'next/link'
 
 type featureCardProps = {
     className?: string,
@@ -17,7 +18,7 @@ type featureCardProps = {
 
 const FeatureCard = ({ className, image, featureType, idNumber, category, author, minRead, title }: featureCardProps) => {
     return (
-        <div className={cn(
+        <Link href={"/blog/slug"} className={cn(
             "max-w-5xl w-full bg-transparent border border-neutral-900 p-2.5 flex flex-col justify-center items-center gap-3 group"
         )}>
             <div className='w-full flex flex-row justify-between items-center gap-x-2'>
@@ -46,7 +47,7 @@ const FeatureCard = ({ className, image, featureType, idNumber, category, author
             <span className='w-full font-medium font-merriweather leading-snug text-xl md:text-2xl lg:text-[28px] group-hover:bg-violet-400 group-active:bg-violet-400 group-focus-within:bg-violet-400'>
                 Best productivity hacks for creative freelancers today
             </span>
-        </div>
+        </Link>
     )
 }
 
