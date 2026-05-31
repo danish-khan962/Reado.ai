@@ -1,12 +1,13 @@
 "use client"
 
+import SummaryModal from '@/components/ai/SummaryModal'
 import PaginationBlock from '@/components/blog/PaginationBlock'
 import { Separator } from '@/components/ui/separator'
 import SeparatorBlack from '@/components/ui/separator-black'
 import MaxWidthContainer from '@/styles/MaxWidthContainer'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import { FaLink, FaFacebook, FaLinkedin, FaReddit, FaWhatsapp, FaTwitter } from 'react-icons/fa'
 import { TbBrandLinkedinFilled, TbBrandFacebookFilled, TbBrandXFilled } from 'react-icons/tb'
 
@@ -26,6 +27,10 @@ const sideBarBlogLinks = [
 ]
 
 const page = () => {
+
+    // Summary modal states
+    const [isSummaryOpen, setIsSummaryOpen] = useState(false);
+
     return (
         <div className='w-full relative pb-20 sm:pb-22 md:pb-24 lg:pb-28'>
             <MaxWidthContainer>
@@ -81,7 +86,7 @@ const page = () => {
 
 
                     {/* Sidebar Extras */}
-                    <div className='flex flex-col w-full lg:max-w-sm gap-y-6 sm:gap-y-7 md:gap-y-8 lg:gap-y-10'>
+                    <div className='flex flex-col w-full lg:max-w-sm gap-y-6 sm:gap-y-7 md:gap-y-8 lg:gap-y-10 sticky top-5 md:top-10 self-start'>
                         {/* Share Post */}
                         <div className='flex flex-row justify-between items-center'>
                             <p className='text-xl md:text-2xl font-merriweather'>Share post</p>
@@ -168,7 +173,23 @@ const page = () => {
                     </div>
                 </div>
             </MaxWidthContainer>
+
+
+            {/* Reado Article summarizing AI */}
+            <div
+                onClick={() => setIsSummaryOpen(true)}
+                className='h-10 w-10 sm:h-11 sm:w-11 md:w-12 md:h-12 bg-linear-to-tl from-[#121212] via-[#353131] to-[#3b3a3a] rounded-full fixed bottom-5 sm:bottom-6 md:bottom-8 lg:bottom-10 right-5 sm:right-6 md:right-8 lg:right-10 z-99 text-center flex justify-center items-center text-white font-extrabold shadow-lg shadow-neutral-700'>
+                R
+            </div>
+
+
+
+            <SummaryModal
+                open={isSummaryOpen}
+                onOpenChange={setIsSummaryOpen}
+            />
         </div>
+
     )
 }
 
