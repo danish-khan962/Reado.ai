@@ -18,9 +18,9 @@ const Footer = () => {
             title: "Pages", links: [
                 { name: "Home", urlHref: "/" },
                 { name: "Blog", urlHref: "/blog" },
-                { name: "Authors", urlHref: "/podcast" },
-                { name: "Categories", urlHref: "/about" },
-                { name: "Podcast", urlHref: "/contact" },
+                { name: "Authors", urlHref: "/author" },
+                { name: "Categories", urlHref: "/blog" },
+                { name: "Podcast", urlHref: "/podcast" },
                 { name: "About/Contact", urlHref: "/contact" },
                 { name: "Subscribe", urlHref: "/contact" },
             ]
