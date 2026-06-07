@@ -9,6 +9,7 @@ import { Input } from '../ui/input'
 import { Button } from '../ui/button'
 import { HugeiconsIcon } from '@hugeicons/react'
 import { MailAdd01Icon, Menu09Icon, MultiplicationSignIcon, Search01Icon } from '@hugeicons/core-free-icons'
+import { SiApostrophe } from "react-icons/si"
 import SeparatorBlack from '../ui/separator-black'
 import { UserButton, useClerk, useUser } from '@clerk/nextjs'
 
@@ -72,7 +73,17 @@ const Navbar = () => {
 
                         {!user ? (<Button onClick={() => openSignIn()} className='cursor-pointer'>Sign in</Button>)
                             :
-                            (<UserButton />)}
+                            (<UserButton>
+                                <UserButton.MenuItems>
+                                    <UserButton.Link
+                                        label="Dashboard"
+                                        labelIcon={<SiApostrophe />}
+                                        href="/dashboard/user"
+                                    />
+
+                                    <UserButton.Action label="manageAccount" />
+                                </UserButton.MenuItems>
+                            </UserButton>)}
                     </div>
                 </div>
 
