@@ -67,15 +67,8 @@ export default function RootLayout({
     >
       <body className="min-h-full cursor-none">
         <ClerkProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
             <SmoothCursor />
             {children}
-          </ThemeProvider>
         </ClerkProvider>
       </body>
     </html>

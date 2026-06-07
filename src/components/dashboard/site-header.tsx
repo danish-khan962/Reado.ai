@@ -14,7 +14,7 @@ import { Separator } from "@/components/ui/separator"
 import { useSidebar } from "@/components/ui/sidebar"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { SidebarLeftIcon } from "@hugeicons/core-free-icons"
-import { ModeToggle } from "../theme/theme-toggler"
+// import { ModeToggle } from "../theme/theme-toggler"
 
 export function SiteHeader() {
   const { toggleSidebar } = useSidebar()
@@ -48,7 +48,7 @@ export function SiteHeader() {
       </div>
       <div className="flex flex-row justify-center items-center gap-2">
         <SearchForm className="w-full sm:ml-auto sm:w-auto" />
-        <ModeToggle />
+        {/* <ModeToggle /> */}
       </div>
     </header>
   )

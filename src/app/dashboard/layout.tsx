@@ -1,7 +1,6 @@
 import { AppSidebar } from "@/components/dashboard/app-sidebar"
 import { SiteHeader } from "@/components/dashboard/site-header"
 import { TooltipProvider } from "@/components/ui/tooltip"
-import { ThemeProvider } from "@/components/theme/theme-provider"
 import {
   SidebarInset,
   SidebarProvider,
@@ -13,18 +12,20 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
   return (
-    <TooltipProvider>
-      <SidebarProvider>
-      <AppSidebar />
+      <div className="dark bg-background text-foreground min-h-screen" style={{ colorScheme: "dark" }}>
+      <TooltipProvider>
+        <SidebarProvider>
+          <AppSidebar />
 
-      <SidebarInset>
-        <SiteHeader />
+          <SidebarInset>
+            <SiteHeader />
 
-        <main className="flex flex-1 flex-col py-2">
-          {children}
-        </main>
-      </SidebarInset>
-    </SidebarProvider>
-    </TooltipProvider>
+            <main className="flex flex-1 flex-col py-2">
+              {children}
+            </main>
+          </SidebarInset>
+        </SidebarProvider>
+      </TooltipProvider>
+    </div>
   )
 }
