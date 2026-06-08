@@ -1,6 +1,6 @@
 "use client"
 
-import { SearchForm } from "@/components/search-form"
+import { SearchForm } from "@/components/dashboard/search-form"
 import {
   Breadcrumb,
   BreadcrumbItem,

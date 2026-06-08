@@ -2,10 +2,10 @@
 
 import * as React from "react"
 
-import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
-import { NavSecondary } from "@/components/nav-secondary"
-import { NavUser } from "@/components/nav-user"
+import { NavMain } from "@/components/dashboard/nav-main"
+import { NavProjects } from "@/components/dashboard/nav-projects"
+import { NavSecondary } from "@/components/dashboard/nav-secondary"
+import { NavUser } from "@/components/dashboard/nav-user"
 import {
   Sidebar,
   SidebarContent,
@@ -16,105 +16,73 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { HugeiconsIcon } from "@hugeicons/react"
-import { ComputerTerminalIcon, RoboticIcon, BookOpen02Icon, Settings05Icon, ChartRingIcon, SentIcon, CropIcon, PieChartIcon, MapsIcon, CommandIcon } from "@hugeicons/core-free-icons"
+import { ComputerTerminalIcon, RoboticIcon, BookOpen02Icon, Settings05Icon, ChartRingIcon, SentIcon, CropIcon, PieChartIcon, MapsIcon, CommandIcon, TropicalStormTracks01Icon, DashboardSquare01Icon, LeftToRightListDashIcon, UserIcon, Invoice01Icon, CustomerServiceIcon, Message01FreeIcons, NewsIcon, Audio, DashboardSquareEditIcon, DashboardSquareEditFreeIcons, InvoiceIcon, CustomerService01Icon } from "@hugeicons/core-free-icons"
 
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: "Akash Mahajan",
+    email: "akashmahajan985@gmail.com",
+    avatar: "/avatars/user.jpg",
   },
   navMain: [
     {
-      title: "Playground",
+      title: "Dashboard",
       url: "#",
       icon: (
-        <HugeiconsIcon icon={ComputerTerminalIcon} strokeWidth={2} />
+        <HugeiconsIcon icon={DashboardSquareEditFreeIcons} strokeWidth={2} />
       ),
       isActive: true,
       items: [
         {
-          title: "History",
-          url: "#",
+          title: "Overview",
+          url: "/dashboard/user",
         },
         {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
+          title: "Analytics",
+          url: "/dashboard/user/analytics",
         },
       ],
     },
     {
-      title: "Models",
+      title: "Content",
       url: "#",
       icon: (
-        <HugeiconsIcon icon={RoboticIcon} strokeWidth={2} />
+        <HugeiconsIcon icon={LeftToRightListDashIcon} strokeWidth={2} />
       ),
       items: [
         {
-          title: "Genesis",
-          url: "#",
+          title: "My Blogs",
+          url: "/dashboard/user/my-blogs",
         },
         {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
+          title: "My Podcasts",
+          url: "/dashboard/user/my-podcasts",
         },
       ],
     },
     {
-      title: "Documentation",
+      title: "Security",
       url: "#",
       icon: (
-        <HugeiconsIcon icon={BookOpen02Icon} strokeWidth={2} />
+        <HugeiconsIcon icon={UserIcon} strokeWidth={2} />
       ),
       items: [
         {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
+          title: "Face Authentication",
+          url: "/dashboard/user/face-authentication",
         },
       ],
     },
     {
-      title: "Settings",
+      title: "Billing",
       url: "#",
       icon: (
-        <HugeiconsIcon icon={Settings05Icon} strokeWidth={2} />
+        <HugeiconsIcon icon={InvoiceIcon} strokeWidth={2} />
       ),
       items: [
         {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
+          title: "Plan and Invoice",
+          url: "/dashboard/user/plan-and-invoice",
         },
       ],
     },
@@ -122,39 +90,32 @@ const data = {
   navSecondary: [
     {
       title: "Support",
-      url: "#",
+      url: "/dashboard/user/support",
       icon: (
-        <HugeiconsIcon icon={ChartRingIcon} strokeWidth={2} />
+        <HugeiconsIcon icon={CustomerService01Icon} strokeWidth={2} />
       ),
     },
     {
       title: "Feedback",
-      url: "#",
+      url: "/dashboard/user/feedback",
       icon: (
-        <HugeiconsIcon icon={SentIcon} strokeWidth={2} />
+        <HugeiconsIcon icon={Message01FreeIcons} strokeWidth={2} />
       ),
     },
   ],
   projects: [
     {
-      name: "Design Engineering",
-      url: "#",
+      name: "Read Latest Blogs",
+      url: "/blog",
       icon: (
-        <HugeiconsIcon icon={CropIcon} strokeWidth={2} />
+        <HugeiconsIcon icon={NewsIcon} strokeWidth={2} />
       ),
     },
     {
-      name: "Sales & Marketing",
-      url: "#",
+      name: "Listen Podcasts",
+      url: "/podcast",
       icon: (
-        <HugeiconsIcon icon={PieChartIcon} strokeWidth={2} />
-      ),
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: (
-        <HugeiconsIcon icon={MapsIcon} strokeWidth={2} />
+        <HugeiconsIcon icon={Audio} strokeWidth={2} />
       ),
     },
   ],
@@ -171,12 +132,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <a href="#">
-                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                  <HugeiconsIcon icon={CommandIcon} strokeWidth={2} className="size-4" />
+                <div className="flex aspect-square size-8 md:size-9 items-center justify-center rounded-lg bg-linear-to-tl from-[#FFFFFF] via-[#FAFAFA] to-[#F2F2F2] text-black">
+                  <HugeiconsIcon icon={TropicalStormTracks01Icon} strokeWidth={2} className="size-4" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium">Acme Inc</span>
-                  <span className="truncate text-xs">Enterprise</span>
+                  <span className="truncate font-medium md:text-base">Reado.ai</span>
+                  <span className="truncate text-xs">User Dashboard</span>
                 </div>
               </a>
             </SidebarMenuButton>

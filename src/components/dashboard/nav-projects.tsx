@@ -43,7 +43,7 @@ export function NavProjects({
               </a>
             </SidebarMenuButton>
             <DropdownMenu>
-              <DropdownMenuTrigger asChild>
+              {/* <DropdownMenuTrigger asChild>
                 <SidebarMenuAction
                   showOnHover
                   className="aria-expanded:bg-muted"
@@ -51,7 +51,7 @@ export function NavProjects({
                   <HugeiconsIcon icon={MoreHorizontalCircle01Icon} strokeWidth={2} />
                   <span className="sr-only">More</span>
                 </SidebarMenuAction>
-              </DropdownMenuTrigger>
+              </DropdownMenuTrigger> */}
               <DropdownMenuContent
                 className="w-48"
                 side={isMobile ? "bottom" : "right"}
@@ -59,11 +59,11 @@ export function NavProjects({
               >
                 <DropdownMenuItem>
                   <HugeiconsIcon icon={FolderIcon} strokeWidth={2} className="text-muted-foreground" />
-                  <span>View Project</span>
+                  <span>View</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <HugeiconsIcon icon={Share03Icon} strokeWidth={2} className="text-muted-foreground" />
-                  <span>Share Project</span>
+                  <span>Share</span>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
@@ -76,8 +76,8 @@ export function NavProjects({
         ))}
         <SidebarMenuItem>
           <SidebarMenuButton>
-            <HugeiconsIcon icon={MoreHorizontalCircle01Icon} strokeWidth={2} />
-            <span>More</span>
+            {/* <HugeiconsIcon icon={MoreHorizontalCircle01Icon} strokeWidth={2} />
+            <span>More</span> */}
           </SidebarMenuButton>
         </SidebarMenuItem>
       </SidebarMenu>
