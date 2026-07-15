@@ -1,31 +1,47 @@
-import { AppSidebar } from "@/components/dashboard/app-sidebar"
-import { SiteHeader } from "@/components/dashboard/site-header"
-import { TooltipProvider } from "@/components/ui/tooltip"
-import {
-  SidebarInset,
-  SidebarProvider,
-} from "@/components/ui/sidebar"
+"use client";
 
-export default function DashboardLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+import React, { useState } from "react";
+import DashboardHeader from "@/components/dashboard/dashboard-header";
+import NewSidebar from "@/components/dashboard/new-sidebar";
+
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  const [isDesktopSidebarOpen, setIsDesktopSidebarOpen] = useState(true);
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    if (window.innerWidth >= 1024) {
+      setIsDesktopSidebarOpen((prev) => !prev);
+    } else {
+      setIsMobileSidebarOpen((prev) => !prev);
+    }
+  };
+
   return (
-      <div className="dark bg-background text-foreground min-h-screen" style={{ colorScheme: "dark" }}>
-      <TooltipProvider>
-        <SidebarProvider>
-          <AppSidebar />
+    <div className="flex min-h-screen">
+      {isMobileSidebarOpen && (
+        <div
+          onClick={() => setIsMobileSidebarOpen(false)}
+          className="fixed inset-0 z-40 bg-black/40 lg:hidden"
+        />
+      )}
 
-          <SidebarInset>
-            <SiteHeader />
+      <NewSidebar
+        isDesktopSidebarOpen={isDesktopSidebarOpen}
+        isMobileSidebarOpen={isMobileSidebarOpen}
+        closeMobileSidebar={() => setIsMobileSidebarOpen(false)}
+      />
 
-            <main className="flex flex-1 flex-col py-2">
-              {children}
-            </main>
-          </SidebarInset>
-        </SidebarProvider>
-      </TooltipProvider>
+      <div className="flex-1">
+        <DashboardHeader
+          isDesktopSidebarOpen={isDesktopSidebarOpen}
+          isMobileSidebarOpen={isMobileSidebarOpen}
+          toggleSidebar={toggleSidebar}
+        />
+
+        {children}
+      </div>
     </div>
-  )
-}
+  );
+};
+
+export default Layout;
