@@ -6,6 +6,7 @@ import SeparatorBlack from '@/components/ui/separator-black'
 import React from 'react'
 import { formatDateTime } from '@/lib/utils'
 import { HiPlus } from "react-icons/hi"
+import Link from 'next/link'
 
 // Stats
 const userStatsCards = [
@@ -25,10 +26,12 @@ const page = () => {
 
         <div className='flex flex-col justify-end items-end gap-2'>
           <p className='text-sm md:text-base font-medium text-neutral-400'>{formatDateTime(new Date())}</p>
-          <button className='bg-white/85 hover:bg-white/95 transition-all ease-in-out duration-200 font-medium text-sm sm:text-base md:text-lg lg:text-xl tracking-tight py-2 sm:py-3 md:py-4 px-5 sm:px-7 md:px-9 text-black/90 flex flex-row justify-center items-center gap-3'>
-            <HiPlus />
-            Add New
-          </button>
+          <Link href={"/dashboard/user/post-new"}>
+            <button className='bg-white/85 hover:bg-white/95 transition-all ease-in-out duration-200 font-medium text-sm sm:text-base md:text-lg lg:text-xl tracking-tight py-2 sm:py-3 md:py-4 px-5 sm:px-7 md:px-9 text-black/90 flex flex-row justify-center items-center gap-3'>
+              <HiPlus />
+              Add New
+            </button>
+          </Link>
         </div>
       </div>
       <SeparatorBlack />

@@ -20,7 +20,7 @@ const RecentActivityCard = () => {
           <span className='text-xs md:text-sm font-medium text-neutral-500'>2 hours ago</span>
         </div>
 
-        <h1 className='mt-10 md:mt-12 font-medium text-2xl md:text-3xl lg:text-4xl tracking-tight leading-tight font-merriweather'>Best productive hacks for creative freelancers today</h1>
+        <h1 className='mt-10 md:mt-12 font-medium text-3xl md:text-4xl lg:text-5xl tracking-tight leading-tight font-merriweather'>Best productive hacks for creative freelancers today</h1>
 
         <p className='text-xs md:text-sm lg:text-base leading-snug text-neutral-700 line-clamp-2'>
           Creative freelancers face constant pressure to deliver high quality work while managing deadlines, communication, and personal time. Productivity plays a major role in staying consistent and competitive in this growing industry.
