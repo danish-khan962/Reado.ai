@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import DashboardHeader from "@/components/dashboard/dashboard-header";
 import NewSidebar from "@/components/dashboard/new-sidebar";
+import Footer from "@/components/common/Footer";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [isDesktopSidebarOpen, setIsDesktopSidebarOpen] = useState(true);
@@ -31,7 +32,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         closeMobileSidebar={() => setIsMobileSidebarOpen(false)}
       />
 
-      <div className="flex-1">
+      <div className="flex-1 max-h-screen h-full overflow-y-scroll">
         <DashboardHeader
           isDesktopSidebarOpen={isDesktopSidebarOpen}
           isMobileSidebarOpen={isMobileSidebarOpen}
@@ -39,6 +40,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         />
 
         {children}
+        <Footer />
       </div>
     </div>
   );
