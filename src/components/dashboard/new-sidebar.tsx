@@ -14,7 +14,7 @@ const RedirectDashboardTabs = [
   { tabName: "Dashboard", redirectURL: "/dashboard/user", icon: DashboardCircleIcon },
   { tabName: "All Blogs", redirectURL: "/dashboard/user/blogs", icon: ImageUploadIcon },
   { tabName: "All Podcasts", redirectURL: "/dashboard/user/podcasts", icon: Mic01Icon },
-  { tabName: "AI Analytics", redirectURL: "/dashboard/user/analytics", icon: AiScanIcon },
+  // { tabName: "AI Analytics", redirectURL: "/dashboard/user/analytics", icon: AiScanIcon },
 ]
 
 interface NewSidebarProps {

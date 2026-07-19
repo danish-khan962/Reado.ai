@@ -16,16 +16,16 @@ const userStatsCards = [
 
 const page = () => {
   return (
-    <div className='relative flex flex-col px-4 md:px-6 py-5 gap-5 md:gap-8 lg:gap-10 overflow-y-scroll'>
-      <div className='flex flex-row gap-5 justify-between items-start'>
+    <div className='relative flex flex-col px-4 md:px-6 py-5 gap-5 md:gap-8 lg:gap-10'>
+      <div className='flex flex-row gap-5 justify-between items-start bg-linear-to-bl from-[#212121] via-[#0A0A0A] to-[#121212] p-3 md:p-5 rounded-lg md:rounded-xl'>
         <div className='flex flex-col text-start gap-y-2'>
-          <p className='text-sm md:text-base font-medium text-neutral-600'>Welcome Back,</p>
-          <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-800 uppercase tracking-tight font-merriweather'>Danish</h2>
+          <p className='text-sm md:text-base font-medium text-neutral-400'>Welcome Back,</p>
+          <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight font-merriweather bg-linear-to-tl from-[#FFFFFF] via-[#FAFAFA] to-[#F2F2F2] text-transparent bg-clip-text'>Danish</h2>
         </div>
 
         <div className='flex flex-col justify-end items-end gap-2'>
-          <p className='text-sm md:text-base font-medium text-neutral-700'>{formatDateTime(new Date())}</p>
-          <button className='bg-black font-medium text-sm sm:text-base md:text-lg lg:text-xl tracking-tight py-2 sm:py-3 md:py-4 px-5 sm:px-7 md:px-9 text-white flex flex-row justify-center items-center gap-3'>
+          <p className='text-sm md:text-base font-medium text-neutral-400'>{formatDateTime(new Date())}</p>
+          <button className='bg-white/85 hover:bg-white/95 transition-all ease-in-out duration-200 font-medium text-sm sm:text-base md:text-lg lg:text-xl tracking-tight py-2 sm:py-3 md:py-4 px-5 sm:px-7 md:px-9 text-black/90 flex flex-row justify-center items-center gap-3'>
             <HiPlus />
             Add New
           </button>
@@ -34,7 +34,7 @@ const page = () => {
       <SeparatorBlack />
 
 
-      <div className='w-full grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4'>
+      <div className='w-full grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4'>
         {userStatsCards.map((userStats, index) => (
           <div
             key={index}
