@@ -1,4 +1,5 @@
 "use client";
+import "@mdxeditor/editor/style.css";
 
 import React, { useState } from "react";
 import DashboardHeader from "@/components/dashboard/dashboard-header";
