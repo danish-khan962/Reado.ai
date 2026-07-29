@@ -13,6 +13,7 @@ import { Airplane01Icon, Book02Icon, BorderFullIcon, Briefcase01Icon, HealthIcon
 import { HugeiconsIcon } from '@hugeicons/react'
 import { Button } from '@/components/ui/button'
 import MarkdownEditor from '@/components/markdown/MarkdownEditor'
+import PromptBox from '@/components/ai/PromptBox'
 
 const postCategories = [
   { name: "All", icon: BorderFullIcon },
@@ -163,6 +164,8 @@ const page = () => {
           </div>
         </div>
       </div>
+
+      {/* <PromptBox className='fixed bottom-5' /> */}
     </form>
   )
 }

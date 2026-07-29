@@ -92,7 +92,7 @@ const NewSidebar = ({ isDesktopSidebarOpen, isMobileSidebarOpen, closeMobileSide
       <div className='flex flex-col justify-center items-center'>
         <div className='p-5 flex justify-center items-center border-y-2 border-black w-full'>
           <Link href={"/dashboard/user/post-new"} className='w-full'>
-            <button className='bg-black text-white font-medium tracking-tight w-full py-5 flex flex-row justify-center items-center gap-3 hover:shadow-2xl hover:rounded-sm hover:bg-black/90 transition-all ease-in-out duration-200'>
+            <button className='bg-black text-white font-medium tracking-tight w-full py-5 flex flex-row justify-center items-center rounded-full gap-3 hover:shadow-2xl hover:bg-black/90 transition-all ease-in-out duration-200'>
               <RiAddCircleFill className='text-xl' />
               ADD NEW
             </button>
