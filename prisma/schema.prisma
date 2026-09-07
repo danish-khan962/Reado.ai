@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// User Model (Synced with Clerk)
+model User {
+  id          String      @id // Clerk User ID 
+  email       String      @unique
+  name        String
+  avatarUrl   String?
+  bio         String?     @db.Text
+  countryTag  String?     
+  socialLinks Json?       // { linkedin: "", twitter: "" }
+
+  posts       Post[]
+  aiInsight   AiInsight?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+// Post Model
+model Post {
+  id              String   @id @default(cuid())
+  slug            String   @unique
+  title           String
+  excerpt         String   @db.Text
+  content         String   @db.Text
+  banners         String[] // Array of image URLs for Swiper gallery
+  readTime        Int      @default(0) // Calculated dynamically
+  category        String   // TECH, FINANCE, HEALTH, LIFESTYLE, etc.
+  tags            String[]
+  views           Int      @default(0)
+
+  // Editor Curation Flags
+  isFeatured      Boolean  @default(false)
+  isEditorsChoice Boolean  @default(false)
+  isWatchSection  Boolean  @default(false)
+
+  authorId        String
+  author          User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// AI Insights & Analytics Model
+model AiInsight {
+  id            String   @id @default(cuid())
+  userId        String   @unique
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  totalReads    Int      @default(0)
+  growthRate    Float    @default(0.0)
+  aiSummaryText String?  @db.Text
+  updatedAt     DateTime @updatedAt
+}
+
+// Newsletter Subscribers
+model NewsletterSubscriber {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  isSubscribed Boolean  @default(true)
+  subscribedAt DateTime @default(now())
+}

@@ -2,8 +2,27 @@ import MaxWidthContainer from '@/styles/MaxWidthContainer'
 import React from 'react'
 import SubscribeForm from './SubscribeForm'
 import FeatureCard from './FeatureCard'
+import { prisma } from '@/lib/prisma'
 
-const FeatureSection = () => {
+const FeatureSection = async () => {
+    // Fetch curated featured post, or fallback to the latest post
+    const post = await prisma.post.findFirst({
+        where: { isFeatured: true },
+        include: {
+            author: {
+                select: { name: true, avatarUrl: true },
+            },
+        },
+        orderBy: { createdAt: 'desc' },
+    }) ?? await prisma.post.findFirst({
+        include: {
+            author: {
+                select: { name: true, avatarUrl: true },
+            },
+        },
+        orderBy: { createdAt: 'desc' },
+    })
+
     return (
         <div className='w-full relative mt-6 md:mt-8 lg:mt-10'>
             <MaxWidthContainer className='flex flex-col xl:flex-row justify-between items-start lg:items-center gap-x-20 gap-y-5'>
@@ -16,13 +35,20 @@ const FeatureSection = () => {
                     </div>
 
                     <SubscribeForm
-                    heading='Don&apos;t miss a thing'
-                    subheading='Subscribe to get updates straight to your inbox.'
-                    placeholder='Subscribe your email'
+                        heading='Don&apos;t miss a thing'
+                        subheading='Subscribe to get updates straight to your inbox.'
+                        placeholder='Subscribe your email'
                     />
                 </div>
 
-                <FeatureCard />
+                <FeatureCard 
+                    title={post?.title || "Best productivity hacks for creative freelancers today"}
+                    slug={post?.slug || ""}
+                    category={post?.category || "TECH"}
+                    author={post?.author?.name || "Danish Khan"}
+                    minRead={post?.readTime || 7}
+                    image={post?.banners?.[0] || "/images/featured-image.png"}
+                />
             </MaxWidthContainer>
         </div>
     )
