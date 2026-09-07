@@ -1,3 +1,6 @@
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 import DiscoverMoreStories from '@/components/home/DiscoverMoreStories'
 import EditorsChoice from '@/components/home/EditorsChoice'
 import FeatureSection from '@/components/home/FeatureSection'
