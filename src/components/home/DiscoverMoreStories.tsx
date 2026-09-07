@@ -4,14 +4,19 @@ import CommonBlogCard from '../common/CommonBlogCard'
 import { Separator } from '../ui/separator'
 import Link from 'next/link'
 import { prisma } from '@/lib/prisma'
-import { Prisma } from '@prisma/client'
 
-type SidebarPost = Prisma.PostGetPayload<{
-  include: { author: { select: { name: true } } }
-}>
+interface SidebarPost {
+  id: string
+  title: string
+  slug: string
+  readTime: number
+  author: {
+    name: string
+  } | null
+}
 
 const DiscoverMoreStories = async () => {
-    // Fetch 3 stories 
+    // Fetch 3 stories
     const discoverPosts = await prisma.post.findMany({
         take: 3,
         include: {
@@ -22,7 +27,7 @@ const DiscoverMoreStories = async () => {
         orderBy: { createdAt: 'desc' },
     })
 
-    // Fetch the most recent posts 
+    // 2. Fetch the most recent posts strictly for the rightmost text list
     const recentSidebarPosts: SidebarPost[] = await prisma.post.findMany({
         take: 3,
         orderBy: { createdAt: 'desc' },
@@ -79,7 +84,7 @@ const DiscoverMoreStories = async () => {
                     />
 
                     <div className='max-w-none lg:max-w-xs w-full mt-6 lg:mt-0 flex flex-col gap-y-3.5 sm:gap-y-4 md:gap-y-5 lg:gap-y-7'>
-                        {recentSidebarPosts.map((item: SidebarPost) => (
+                        {recentSidebarPosts.map((item) => (
                             <div className='flex flex-col justify-start items-start gap-y-2.5 group' key={item.id}>
                                 <Link href={item.slug ? `/blog/${item.slug}` : "/blog"}>
                                     <h2 className='text-base md:text-lg font-merriweather group-hover:bg-cyan-300 group-active:bg-cyan-300 group-focus-within:bg-cyan-300'>{item.title}</h2>
