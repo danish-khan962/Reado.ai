@@ -16,7 +16,7 @@ interface SidebarPost {
 }
 
 const DiscoverMoreStories = async () => {
-    // Fetch 3 stories
+    //  Fetch 3 stories for the left and middle bento cards
     const discoverPosts = await prisma.post.findMany({
         take: 3,
         include: {
@@ -27,7 +27,7 @@ const DiscoverMoreStories = async () => {
         orderBy: { createdAt: 'desc' },
     })
 
-    // 2. Fetch the most recent posts strictly for the rightmost text list
+    // Fetch the most recent posts strictly for the rightmost text list
     const recentSidebarPosts: SidebarPost[] = await prisma.post.findMany({
         take: 3,
         orderBy: { createdAt: 'desc' },
@@ -84,7 +84,7 @@ const DiscoverMoreStories = async () => {
                     />
 
                     <div className='max-w-none lg:max-w-xs w-full mt-6 lg:mt-0 flex flex-col gap-y-3.5 sm:gap-y-4 md:gap-y-5 lg:gap-y-7'>
-                        {recentSidebarPosts.map((item) => (
+                        {recentSidebarPosts.map((item: SidebarPost) => (
                             <div className='flex flex-col justify-start items-start gap-y-2.5 group' key={item.id}>
                                 <Link href={item.slug ? `/blog/${item.slug}` : "/blog"}>
                                     <h2 className='text-base md:text-lg font-merriweather group-hover:bg-cyan-300 group-active:bg-cyan-300 group-focus-within:bg-cyan-300'>{item.title}</h2>
